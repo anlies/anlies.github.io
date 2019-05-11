@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>MVC | anlies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MVC:每当用户操作了界面，如果需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们这个请求，就会被后端的app.js监听到。app.js是项目的入口模块，一切的请求，都要先进入这里进行处理注意：app.js并没有路由分发的功能，需要调用router.js模块进行路由的分发处理。router.js：这是路由分发处理模块，为了保证路由模块的职能单一，router.js只负责分发路由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC">
+<meta property="og:url" content="https://anlies.github.io/2019/05/11/MVC/index.html">
+<meta property="og:site_name" content="anlies">
+<meta property="og:description" content="MVC:每当用户操作了界面，如果需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们这个请求，就会被后端的app.js监听到。app.js是项目的入口模块，一切的请求，都要先进入这里进行处理注意：app.js并没有路由分发的功能，需要调用router.js模块进行路由的分发处理。router.js：这是路由分发处理模块，为了保证路由模块的职能单一，router.js只负责分发路由">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-11T01:20:35.937Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MVC">
+<meta name="twitter:description" content="MVC:每当用户操作了界面，如果需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们这个请求，就会被后端的app.js监听到。app.js是项目的入口模块，一切的请求，都要先进入这里进行处理注意：app.js并没有路由分发的功能，需要调用router.js模块进行路由的分发处理。router.js：这是路由分发处理模块，为了保证路由模块的职能单一，router.js只负责分发路由">
+  
+    <link rel="alternate" href="/atom.xml" title="anlies" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">anlies</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://anlies.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MVC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/11/MVC/" class="article-date">
+  <time datetime="2019-05-11T01:12:45.673Z" itemprop="datePublished">2019-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MVC
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> MVC:<br>每当用户操作了界面，如果需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们这个请求，就会被后端的app.js监听到。<br>app.js是项目的入口模块，一切的请求，都要先进入这里进行处理<br>注意：app.js并没有路由分发的功能，需要调用router.js模块进行路由的分发处理。<br><br>router.js：这是路由分发处理模块，为了保证路由模块的职能单一，router.js只负责分发路由，不负责业务逻辑的处理。如果涉及到业务逻辑处理操作，router.js就无能为力了，只能调用controller模块进行业务逻辑处理。<br><br>controller:这是业务逻辑处理层，在这个模块中，封装了一些具体业务逻辑处理的逻辑代码，但是，也是为了保证只能单一，此模块只负责处理业务，不负责处理数据的crud<br>如果涉及到了数据的crud，需要调用model层<br><br>model层：职能单一，只负责操作数据库，执行相应的sql语句，进行数据的crud<br>
+</strong> MVVM：**<br>是前端视图层的分层开发思想，主要把每个页面，分成了M,V和VM，其中VM是MVVM思想的核心：因为vm是m和v之间的调度者。<br><br>M：保存的是每个页面中单独的数据<br><br>V：就是每个页面中的html结构<br><br>VM：它是一个调度者，分割了M和V 每当 v层想要获取后保存数据的时候，都要由vm做做中间的处理。 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://anlies.github.io/2019/05/11/MVC/" data-id="cjvitpyy10002zsqs4bgzs86l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/08/HTML5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/11/MVC/">MVC</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/08/HTML5/">HTML5</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/07/first-blog/">blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

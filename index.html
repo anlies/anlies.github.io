@@ -62,6 +62,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MVC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/11/MVC/" class="article-date">
+  <time datetime="2019-05-11T01:12:45.673Z" itemprop="datePublished">2019-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/MVC/">MVC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> MVC:<br>每当用户操作了界面，如果需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们这个请求，就会被后端的app.js监听到。<br>app.js是项目的入口模块，一切的请求，都要先进入这里进行处理<br>注意：app.js并没有路由分发的功能，需要调用router.js模块进行路由的分发处理。<br><br>router.js：这是路由分发处理模块，为了保证路由模块的职能单一，router.js只负责分发路由，不负责业务逻辑的处理。如果涉及到业务逻辑处理操作，router.js就无能为力了，只能调用controller模块进行业务逻辑处理。<br><br>controller:这是业务逻辑处理层，在这个模块中，封装了一些具体业务逻辑处理的逻辑代码，但是，也是为了保证只能单一，此模块只负责处理业务，不负责处理数据的crud<br>如果涉及到了数据的crud，需要调用model层<br><br>model层：职能单一，只负责操作数据库，执行相应的sql语句，进行数据的crud<br>
+</strong> MVVM：**<br>是前端视图层的分层开发思想，主要把每个页面，分成了M,V和VM，其中VM是MVVM思想的核心：因为vm是m和v之间的调度者。<br><br>M：保存的是每个页面中单独的数据<br><br>V：就是每个页面中的html结构<br><br>VM：它是一个调度者，分割了M和V 每当 v层想要获取后保存数据的时候，都要由vm做做中间的处理。 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://anlies.github.io/2019/05/11/MVC/" data-id="cjvitpyy10002zsqs4bgzs86l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HTML5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/08/HTML5/" class="article-date">
@@ -104,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anlies.github.io/2019/05/08/HTML5/" data-id="cjvirruo80000eoqsf8spljao" class="article-share-link">Share</a>
+      <a data-url="https://anlies.github.io/2019/05/08/HTML5/" data-id="cjvitpyxf0000zsqssknmcxzg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anlies.github.io/2019/05/07/first-blog/" data-id="cjvirruq70001eoqs25jc8spz" class="article-share-link">Share</a>
+      <a data-url="https://anlies.github.io/2019/05/07/first-blog/" data-id="cjvitpyxx0001zsqsbn3zgggv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -214,6 +252,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/05/11/MVC/">MVC</a>
+          </li>
         
           <li>
             <a href="/2019/05/08/HTML5/">HTML5</a>
